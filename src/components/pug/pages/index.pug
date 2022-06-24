@@ -1,0 +1,24 @@
+extends ../templates/layout.pug
+
+block variables
+    -
+        let title = 'Worku | Home page'
+        let navList = [
+            {
+                href: '#', 
+                inner: 'Features',
+            },
+            {
+                href: '#', 
+                inner: 'Contact',
+            },
+            {
+                href: '#', 
+                inner: 'Help',
+            },
+        ];
+
+block header
+    include ../../sections/header/header.pug
+//- block main
+//- block footer

@@ -13,7 +13,7 @@ export const path = {
     src: {
         assets: `${srcFolder}/assets/**/*.*`, 
         scss: `${srcFolder}/components/style/style.scss`, 
-        pug: `${srcFolder}/components/pages/*.pug`, 
+        pug: `${srcFolder}/components/pug/pages/*.pug`, 
     },
     clean: destFolder, 
     destFolder: destFolder, 

@@ -1,0 +1,52 @@
+@import '../fonts/fonts.scss';
+
+:root {
+    box-sizing: border-box;
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit;
+}
+
+/* resets */
+
+.reset-button {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: none;
+}
+
+.reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.reset-link {
+    text-decoration: none
+}
+
+/*  */
+
+.visually-hidden {
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* ui */
+@import '../ui/heading/heading.scss';
+@import '../ui/paragraph/paragraph.scss';
+
+/* sections */
+@import '../sections/header/header.scss';
