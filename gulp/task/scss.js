@@ -15,5 +15,5 @@ export const scss = () => {
         .pipe( gulpIf( app.isBuild, gulpCssMin() ) )
         .pipe( gulpIf( app.isBuild, gulpRename( { suffix: '.min' } ) ) )
         .pipe( gulp.dest( path.dest.css ) )
-    );
+    )
 }

@@ -5,8 +5,10 @@ import gulpIf from 'gulp-if';
 import { path } from '../config/path.js';
 
 export const pug = () => {
-    return gulp.src( path.src.pug )
+    return (
+        gulp.src( path.src.pug )
         .pipe( gulpPug( {} ) )
         .pipe( gulpIf( app.isBuild, gulpHtmlMin( { collapseWhitespace: true } ) ) )
-        .pipe( gulp.dest( path.dest.html ) );
+        .pipe( gulp.dest( path.dest.html ) )
+    )
 }
