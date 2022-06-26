@@ -1,0 +1,44 @@
+.header {
+    background: var( --color-main );
+
+    &__layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        color: #fff;
+        font: 400 1.25rem/1 'Krona one', sans-serif;
+    }
+}
+
+.nav-header {
+
+    &__hamburger {
+        display: none;
+    }
+
+    &__list-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin-right: 62px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 50px;
+    }
+    
+    &__link {
+        color: #fff;
+        font: 500 1.25rem/1 "Inter", sans-serif;
+    }
+
+}

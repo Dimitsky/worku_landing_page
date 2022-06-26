@@ -1,6 +1,9 @@
 @import '../fonts/fonts.scss';
 
 :root {
+    --color-main: #140D2D;
+    --color-alter: #E0FF00;
+    --color-hover: coral;
     box-sizing: border-box;
 }
 
@@ -44,9 +47,20 @@
     overflow: hidden;
 }
 
+/* container */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 25px;
+}
+
 /* ui */
 @import '../ui/heading/heading.scss';
 @import '../ui/paragraph/paragraph.scss';
+@import '../ui/button/button.scss';
+@import '../ui/link/link.scss';
 
 /* sections */
 @import '../sections/header/header.scss';
+@import '../sections/hero/hero.scss';

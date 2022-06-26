@@ -1,12 +1,14 @@
 header(class="header")
     div(class="container header__container")
         div(class="header__layout")
-            a(class="header__logo" href="index.html") worku.
+            a(class="link header__logo" href="index.html") worku.
             nav(class="header__nav nav-header" role="navigation" aria-label="Main navigation")
                 button(class="nav-header__hamburger hamburger" type="button" aria-expanded="false" aria-controls="main-menu")
+                    span(class="hamburger__item")
+                    span(class="visually-hidden") Open main menu
                 div(class="nav-header__list-wrap" id="main-menu")
-                    ul(class="nav-header__list")
+                    ul(class="reset-list nav-header__list")
                         each item in navList
                             li(class="nav-header__item")
-                                a(class="reset-link nav-header__link" href=item.href)= item.inner
+                                a(class="link nav-header__link" href=item.href)= item.inner
                     a(class="reset-link button button--login nav-header__login" href="#") Login

@@ -1,0 +1,12 @@
+@import '../../mixins/mixins.scss';
+
+.link {
+    text-decoration: none;
+    transition: color .2s ease, box-shadow .2s ease;
+    
+    &:hover {
+        color: var( --color-hover );
+    }
+
+    @include focus;
+}
