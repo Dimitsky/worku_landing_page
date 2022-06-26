@@ -1,0 +1,39 @@
+.hero {
+    background: var( --color-main );
+
+    &__layout {
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 250px;
+    }
+
+    &__heading, 
+    &__paragraph, 
+    &__button {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__heading, 
+    &__paragraph {
+        color: #fff;
+    }
+
+    &__heading {
+        max-width: 744px;
+        margin-bottom: 32px;
+    }
+
+    &__paragraph {
+        max-width: 490px;
+        margin-bottom: 30px;
+    }
+
+    &__img {
+        position: absolute;
+        bottom: -95px;
+        right: 0%;
+        width: 590px;
+    }        
+
+}
