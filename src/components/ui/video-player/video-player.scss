@@ -1,15 +1,18 @@
 .video-player {
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: no-repeat center center / cover;
 
-    &__container {
-        position: relative;
-        z-index: 1;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 36.1vw;
-        overflow: hidden;
-        background: no-repeat center center / cover;
+    &__iframe {
+        height: 100%;
+        width: 100%;
     }
 
     &__play-button {
