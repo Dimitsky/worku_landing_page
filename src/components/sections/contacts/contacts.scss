@@ -31,26 +31,34 @@
 }
 
 .form-contacts {
+
+    &__label {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__label:last-of-type {
+        margin-bottom: 26px;
+    }
     
     &__input {
         border: none;
         border-radius: 3px;
         width: 100%;
-        margin-bottom: 20px;
         padding: 0.834em 0.8em;
         font: 400 1.125rem/1.389 "Inter", sans-serif;
         background: #F2F0F0;
-        transition: box-shadow .2s ease;
+        transition: box-shadow .2s ease, background-color .2s ease;
 
         @include focus;
 
         &::placeholder {
             color: rgba(20 13 45 / 0.2);
         }
-    }
 
-    &__input:last-of-type {
-        margin-bottom: 26px;
+        &--error {
+            background: rgba(255 0 0 / .3);
+        }
     }
 
     &__error {
@@ -58,6 +66,10 @@
         padding: .6em;
         color: red;
         font: 400 1rem/1 "Inter", sans-serif;
+        
+        &--active {
+            display: block;
+        }
     }
 
 }

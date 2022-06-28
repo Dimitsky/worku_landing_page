@@ -46,3 +46,60 @@ function initYouTubeVideo( playerEl ) {
 }
 
 initYouTubeVideo( document.querySelector( '.video-player' ) );
+
+
+/*
+
+Form validation
+
+*/
+
+let inputEls = document.querySelectorAll( '.form-contacts__input' );
+let form = document.querySelector( '.contacts__form' );
+
+function showError( inputEl ) {
+    let errorEl = inputEl.nextElementSibling;
+
+    if ( inputEl.validity.valueMissing ) {
+        inputEl.classList.add( 'form-contacts__input--error' );
+        errorEl.classList.add( 'form-contacts__error--active' );
+        errorEl.textContent = "Not all required information has been entered.";
+    } else if ( inputEl.validity.patternMismatch ) {
+        inputEl.classList.add( 'form-contacts__input--error' );
+        errorEl.classList.add( 'form-contacts__error--active' );
+        errorEl.textContent = "Please enter a valid name ( [a-zA-Z]+ [a-zA-Z]+ )";
+    } else if ( inputEl.validity.typeMismatch ) {
+        inputEl.classList.add( 'form-contacts__input--error' );
+        errorEl.classList.add( 'form-contacts__error--active' );
+        errorEl.textContent = "Please enter a valid e-mail address.";
+    }
+}
+
+form.addEventListener( 'submit', e => {
+    let isInvalid = false;
+
+    inputEls.forEach( el => {
+        if ( !el.validity.valid ) {
+            showError( el );
+            isInvalid = true;
+        }
+    } );
+
+    if ( isInvalid ) {
+        e.preventDefault();
+    }
+} );
+
+inputEls.forEach( el => {
+    el.addEventListener( 'input', () => {
+        let errorEl = el.nextElementSibling;
+
+        if ( el.validity.valid ) {
+            el.classList.remove( 'form-contacts__input--error' );
+            errorEl.classList.remove( 'form-contacts__error--active' );
+            errorEl.textContent = '';
+        } else {
+            showError( el );
+        }
+    } );
+} );
