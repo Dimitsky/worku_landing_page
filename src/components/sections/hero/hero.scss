@@ -3,7 +3,8 @@
 
     &__layout {
         position: relative;
-        padding-top: 150px;
+        margin-bottom: 140px;
+        padding-top: 129px;
         padding-bottom: 250px;
     }
 
@@ -26,13 +27,19 @@
 
     &__paragraph {
         max-width: 490px;
-        margin-bottom: 30px;
+        margin-bottom: 37px;
+        font-weight: 500;
+        line-height: 1.389;
+    }
+
+    &__button {
+        padding: 1.03em 1.86em;
     }
 
     &__img {
         position: absolute;
         bottom: -95px;
-        right: 0%;
+        right: .4%;
         width: 590px;
     }        
 

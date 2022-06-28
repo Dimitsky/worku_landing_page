@@ -1,0 +1,15 @@
+section(class="features")
+    div(class="container features__container")
+        div(class="features__layout")
+            div(class="features__wrap")
+                h2(class="heading heading--2 features__heading") Create timelines, Track progress, assign work and talk with your clients inside one web app!
+                div(class="video-player" data-id="oHg5SJYRHA0" data-thumbnail="assets/img/features/video_thumbnail.jpg")
+            ul(class="reset-list features__list list-features")
+                each item, index in featuresList
+                    li(class="list-features__item")
+                        div(class="list-features__body" + ( index === 0 ? " list-features__body--dark" : "" ))
+                            svg(class="list-features__icon" viewBox="0 0 70 70")
+                                use(href=`assets/img/defs.svg#${item.icon}`)
+                            h3(class="heading heading--3 list-features__heading list-features__heading--light")= item.heading
+                            p(class="paragraph list-features__paragraph" + ( index === 0 ? " list-features__paragraph--light" : "" ))= item.paragraph
+            button(class="button button--common I want to try!__button" type="button") I want to try!

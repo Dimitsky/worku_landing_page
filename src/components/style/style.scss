@@ -4,6 +4,7 @@
     --color-main: #140D2D;
     --color-alter: #E0FF00;
     --color-hover: coral;
+    --color-card: #C7C3C3;
     box-sizing: border-box;
 }
 
@@ -34,6 +35,13 @@
 
 /*  */
 
+.img, 
+.video {
+    max-width: 100%;
+}
+
+/*  */
+
 .visually-hidden {
     position: absolute;
     border: 0;
@@ -50,7 +58,7 @@
 /* container */
 
 .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
     padding: 0 25px;
 }
@@ -60,7 +68,10 @@
 @import '../ui/paragraph/paragraph.scss';
 @import '../ui/button/button.scss';
 @import '../ui/link/link.scss';
+@import '../ui/video-player/video-player.scss';
 
 /* sections */
 @import '../sections/header/header.scss';
 @import '../sections/hero/hero.scss';
+@import '../sections/features/features.scss';
+@import '../sections/manage/manage.scss';
