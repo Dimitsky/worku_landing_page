@@ -3,8 +3,10 @@ section(class="contacts")
         div(class="contacts__layout")
             div(class="contacts__wrap")
                 h2(class="heading heading--2 contacts__heading") Signup for early access offer!
-                p(class="paragaph contacts__paragraph") Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim
+                p(class="paragraph contacts__paragraph") Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim
                 form(class="contacts__form form-contacts" method="POST" action="#")
-                    input(class="form-contacts__input" id="user-name" name="user-name" type="text" pattern="[a-zA-Z a-zA-Z]" placeholder="Ross Martin")
-                    input(class="form-contacts__input" id="user-email" name="user-email" type="email" placeholder="rossmartin@gmail.com")
+                    input(class="form-contacts__input" id="user-name" name="user-name" type="text" required pattern="[a-zA-Z a-zA-Z]" placeholder="Ross Martin" aria-label="Enter user name")
+                    span(class="form-contacts__error")
+                    input(class="form-contacts__input" id="user-email" name="user-email" type="email" required placeholder="rossmartin@gmail.com" aria-label="Enter user emal")
+                    span(class="form-contacts__error")
                     button(class="button button--common form-contacts__button" type="submit") Submit
