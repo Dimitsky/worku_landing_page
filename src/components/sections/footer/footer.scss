@@ -1,0 +1,23 @@
+.footer {
+    background: #000;
+
+    &__layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+
+    &__email {
+        margin-right: 50px;
+        color: #fff;
+        line-height: 1.389;
+    }
+
+    &__copy {
+        padding-right: 6px;
+        color: #fff;
+        line-height: 1.389;
+    }
+}
