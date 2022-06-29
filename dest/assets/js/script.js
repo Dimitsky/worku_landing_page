@@ -225,7 +225,7 @@ function enableFocusTrap( el ) {
     disableFocusTrap( nav, burgerFocusTrapFlag );
     burgerFocusTrapFlag = null;
     //
-    document.querySelector( 'body' ).style.overflow = null;
+    document.querySelector( 'body' ).style.overflow = '';
   }
   
   // обработчик открытия меню
@@ -245,13 +245,10 @@ function enableFocusTrap( el ) {
       // отключаем обработчики для настольной версии сайта
       burger.removeEventListener( 'click', handleBurger );
       disableFocusTrap( nav, burgerFocusTrapFlag );
+      closeMenu( burger, menu );
     } else {
       // подключаем обработчики для мобильной версии сайта
       burger.addEventListener( 'click', handleBurger );
-  
-      if ( burgerFocusTrapFlag ) {
-        enableFocusTrap( nav );
-      }
     }
   }
   
