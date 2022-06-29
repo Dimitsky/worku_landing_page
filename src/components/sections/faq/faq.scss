@@ -1,6 +1,10 @@
 @import '../../mixins/mixins.scss';
 
 .faq {
+
+    &__layout {
+        margin-bottom: 135px;
+    }
     
     &__wrap {
         max-width: 793px;
