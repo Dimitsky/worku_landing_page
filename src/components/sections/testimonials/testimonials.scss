@@ -59,3 +59,16 @@
     }
 
 }
+
+@media screen and ( max-width: 1023px) {
+    .testimonials {
+
+        &__layout {
+            margin-bottom: 50px;
+        }
+
+        &__heading {
+            font-size: 2em;
+        }
+    }
+}

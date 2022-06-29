@@ -3,7 +3,7 @@
 .contacts {
 
     &__container {
-        background: no-repeat top right 27px/48.3% url("../img/contacts/bg-1@2x.png");
+        background: no-repeat top right 73px/45% url("../img/contacts/bg-1@2x.png");
     }
     
     &__layout {
@@ -72,4 +72,44 @@
         }
     }
 
+}
+
+@media screen and ( max-width: 1199px ) {
+    .contacts {
+
+        &__container {
+            background: none;
+        }
+    }    
+}
+
+@media screen and ( max-width: 1023px ) {
+    .contacts {
+
+        &__container {
+            background: none;
+        }
+
+        &__layout {
+            margin-bottom: 50px;
+            padding-bottom: 0;
+        }
+
+        &__wrap {
+            max-width: unset;
+            padding: 0;
+        }
+
+        &__heading {
+            font-size: 2em;
+        }
+
+    }
+
+    .form-contacts {
+
+        &__button {
+            padding: .5em;
+        }
+    }
 }

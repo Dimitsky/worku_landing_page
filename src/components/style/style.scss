@@ -56,16 +56,15 @@
     padding: 0;
     white-space: nowrap;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
     overflow: hidden;
 }
 
 /* container */
 
 .container {
-    max-width: 1250px;
+    max-width: 1340px;
     margin: auto;
-    padding: 0 25px;
+    padding: 0 70px;
 }
 
 /* ui */
@@ -84,3 +83,10 @@
 @import '../sections/contacts/contacts.scss';
 @import '../sections/faq/faq.scss';
 @import '../sections/footer/footer.scss';
+
+@media screen and ( max-width: 1023px ) {
+    .container {
+        max-width: 1224px;
+        padding: 0 12px;
+    }
+}

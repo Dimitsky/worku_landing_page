@@ -66,3 +66,45 @@
         line-height: 1.6;
     }
 }
+
+@media screen and ( max-width: 1199px) {
+    .manage {
+
+        &__layout {
+            background: none;
+        }
+    }    
+}
+
+@media screen and ( max-width: 1023px ) {
+    .manage {
+
+        &__layout {
+            display: block;
+            margin-bottom: 50px;
+            background: none;
+        }
+
+        &__wrap {
+            padding: 0;
+        }
+
+        &__heading {
+            font-size: 2em;
+        }
+
+    }
+
+    .list-manage {
+
+        &__item {
+            padding-right: 0;
+            padding-left: 55px;
+
+            &::before {
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}

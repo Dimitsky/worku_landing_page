@@ -1,4 +1,4 @@
-
+document.documentElement.classList.add( 'js' );
 
 // Заменяет заглушку на плеер youtube
 function createIframe( div ) {
@@ -143,3 +143,125 @@ accEls.forEach( acc => {
         }
     } );
 } );
+
+/*
+
+hamburger
+
+*/
+
+function enableFocusTrap( el ) {
+    let focusableEls = el.querySelectorAll( 'a[href]:not([disabled]), button:not([disabled])' );
+    let firstFocusableEl = focusableEls[0];
+    let lastFocusableEl = focusableEls[focusableEls.length - 1];
+  
+    function handler( e ) {
+      let isTabPressed = ( e.key === 'Tab' );
+  
+      if ( !isTabPressed ) return;
+  
+      if ( e.shiftKey ) {
+        if ( document.activeElement === firstFocusableEl ) {
+          lastFocusableEl.focus();
+          e.preventDefault();
+        }
+      } else {
+        if ( document.activeElement === lastFocusableEl ) {
+          firstFocusableEl.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  
+    el.addEventListener( 'keydown', handler );
+  
+    return handler;
+  }
+  
+  function disableFocusTrap( el, handler ) {
+    el.removeEventListener( 'keydown', handler )
+  }
+  
+  /*
+  
+  NAVIGATION
+  
+  */
+  
+  let burgerFocusTrapFlag = null;
+  
+  // навигация 
+  let nav = document.querySelector( '#main-nav' );
+  // кнопка открытия меню
+  let burger = document.querySelector( '.hamburger' );
+  // меню 
+  let menu = document.querySelector( '#main-menu' );
+  // фокусируемые элементы в меню (ссылки)
+  let focusableEls = nav.querySelectorAll( 'a[href]:not([disabled]), button:not([disabled])' );
+  // первая ссылка
+  let firstFocusableEl = focusableEls[0];
+  // последняя ссылка
+  let lastFocusableEl = focusableEls[focusableEls.length - 1];
+  
+  // Открыть меню
+  function openMenu( triggerEl, menuEl ) {
+    // переключить ариа атрибут
+    triggerEl.setAttribute( 'aria-expanded', 'true' );
+    // добавить для меню класс open
+    menuEl.classList.add( 'open' );
+    // Включает ловушку для фокуса
+    burgerFocusTrapFlag = enableFocusTrap( nav );
+    //
+    document.querySelector( 'body' ).style.overflow = 'hidden';
+  }
+  
+  // Закрыть меню
+  function closeMenu( triggerEl, menuEl ) {
+    // переключить ариа атрибут
+    triggerEl.setAttribute( 'aria-expanded', 'false' );
+    // удалить для меню класс open
+    menuEl.classList.remove( 'open' );
+    // выключает ловушку для фокуса
+    disableFocusTrap( nav, burgerFocusTrapFlag );
+    burgerFocusTrapFlag = null;
+    //
+    document.querySelector( 'body' ).style.overflow = null;
+  }
+  
+  // обработчик открытия меню
+  function handleBurger( e ) {
+    // true - меню открыто. false - меню закрыто
+    let isExpanded = this.getAttribute( 'aria-expanded' ) == 'true' ? true : false;
+  
+    // если меню открыто - то закрыть
+    if ( isExpanded ) closeMenu( burger, menu );
+    // если закрыто - то открыть
+    else openMenu( burger, menu );
+  }
+  
+  // обработчик медиа запроса
+  function handleChange( e ) {
+    if ( e.matches ) {
+      // отключаем обработчики для настольной версии сайта
+      burger.removeEventListener( 'click', handleBurger );
+      disableFocusTrap( nav, burgerFocusTrapFlag );
+    } else {
+      // подключаем обработчики для мобильной версии сайта
+      burger.addEventListener( 'click', handleBurger );
+  
+      if ( burgerFocusTrapFlag ) {
+        enableFocusTrap( nav );
+      }
+    }
+  }
+  
+  // медиа запрос
+  const mediaQuery = window.matchMedia( '(min-width: 1024px)' );
+  
+  // подключает обработчик для медиа запросов
+  mediaQuery.addListener( handleChange );
+  
+  // если вначале загружается мобильная версия, то подключить обработчики для гамбургера и меню
+  if ( document.documentElement.clientWidth < 1024 ) {
+    burger.addEventListener( 'click', handleBurger );
+  }

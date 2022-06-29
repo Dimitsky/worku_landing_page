@@ -32,7 +32,7 @@
 
     &__item {
         display: flex;
-        width: max(33.33%, 331px);
+        width: 33.33%;
         padding: 0 10px 20px;
     }
     
@@ -69,4 +69,37 @@
         }
     }
 
+}
+
+@media screen and ( max-width: 1023px ) {
+    .features {
+
+        &__layout {
+            margin-bottom: 50px;
+        }
+
+        &__heading {
+            font-size: 2em;
+        }
+
+        &__video-wrap {
+            height: 350px;
+        }
+
+        &__button {
+            padding: .5em;
+        }
+    }
+
+    .list-features {
+
+        &__item {
+            width: 100%;
+        }
+
+        &__icon {
+            height: 40px;
+            width: 40px;
+        }
+    }
 }

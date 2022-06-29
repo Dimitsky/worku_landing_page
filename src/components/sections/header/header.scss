@@ -1,4 +1,7 @@
+@import '../../mixins/mixins.scss';
+
 .header {
+    position: relative;
     background: var( --color-main );
 
     &__layout {
@@ -16,13 +19,10 @@
         color: #fff;
         font: 400 1.25rem/1 'Krona one', sans-serif;
     }
+
 }
 
 .nav-header {
-
-    &__hamburger {
-        display: none;
-    }
 
     &__list-wrap {
         display: flex;
@@ -42,6 +42,137 @@
     &__link {
         color: #fff;
         font: 500 1.25rem/1 "Inter", sans-serif;
+    }
+
+}
+
+.hamburger {
+    background: red;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 99001;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background: none;
+    cursor: pointer;
+    transition: box-shadow .2s ease;
+
+    @include focus;
+
+    &__item {
+        position: relative;
+        border-radius: 2px;
+        display: block;
+        height: 2px;
+        width: 30px;
+        background: #fff;
+        transition: transform .2s ease, background-color .2s ease;
+
+        [aria-expanded='true'] & {
+            background-color: transparent;
+            transform: translateX(-30px);
+        }
+
+        &::before, 
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-radius: 2px;
+            height: 2px;
+            width: 30px;
+            background: #fff;
+            transition: transform 0.2s ease;
+            transform-origin: left;
+        }
+
+        &::before {
+            transform: translateY(-10px);
+
+            [aria-expanded='true'] & {
+                transform: translate(34px, -10px) rotate(45deg);
+            }
+        }
+
+        &::after {
+            transform: translateY(10px);
+
+            [aria-expanded='true'] & {
+                transform: translate(34px, 11px) rotate(-45deg);
+            }
+        }
+    }
+
+}
+
+@media screen and ( max-width: 1023px ) {
+    .header {
+
+        &__layout {
+            display: block;
+        }
+    }
+
+    .nav-header {
+        
+        &__list-wrap {
+            display: block;
+            padding-top: 70px;
+            padding-bottom: 30px;
+
+            .js & {
+                position: absolute;
+                z-index: 99000;
+                top: -100vh;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100vh;
+                width: 100%;
+                background: rgba( 0 0 0 / .9);
+                transition: transform .2s ease;
+    
+                &.open {
+                    transform: translateY(100vh);
+                }
+
+            }
+
+        }
+
+        &__list {
+            display: block;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        &__item:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__login {
+            display: inline-block;
+            padding: .5em;
+            font-size: 1.5em;
+        }
+
+        &__link {
+            display: block;
+            font-size: 2em;
+            text-align: center;
+        }
+    }
+
+    .hamburger {
+        display: flex;
     }
 
 }

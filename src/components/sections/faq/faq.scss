@@ -55,13 +55,13 @@
     &__content {
         max-height: 0;
         opacity: 0;
-        visibility: 0;
+        visibility: hidden;
         padding: 0 2em;
         transition: all .2s ease;
 
         .open & {
             opacity: 1;
-            visibility: 1;
+            visibility: visible;
             padding: 2em;
         }
     }
@@ -71,4 +71,25 @@
         text-align: left;
     }
 
+}
+
+@media screen and ( max-width: 1023px ) {
+    .faq {
+
+        &__layout {
+            margin-bottom: 50px;
+        }
+
+        &__heading {
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+    }
+
+    .accordion-faq {
+
+        &__title {
+            margin-right: 15px;
+        }
+    }
 }

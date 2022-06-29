@@ -21,3 +21,16 @@
         line-height: 1.389;
     }
 }
+
+@media screen and ( max-width: 1023px ) {
+    .footer {
+
+        &__layout {
+            flex-wrap: wrap;
+        }
+
+        &__address {
+            padding: 15px 0;
+        }
+    }
+}
