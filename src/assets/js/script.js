@@ -103,3 +103,43 @@ inputEls.forEach( el => {
         }
     } );
 } );
+
+/*
+
+Accordion
+
+*/
+
+function openAcc( accEl ) {
+    let control = accEl.querySelector( '.accordion-faq__control' );
+    let content = accEl.querySelector( '.accordion-faq__content' );
+
+    accEl.classList.add( 'open' );
+    control.setAttribute( 'aria-expanded', true );
+    content.setAttribute( 'aria-hidden', false );
+    content.style.maxHeight = content.scrollHeight + 'px';
+}
+
+function closeAcc( accEl ) {
+    let control = accEl.querySelector( '.accordion-faq__control' );
+    let content = accEl.querySelector( '.accordion-faq__content' );
+
+    accEl.classList.remove( 'open' );
+    control.setAttribute( 'aria-expanded', false );
+    content.setAttribute( 'aria-hidden', true );
+    content.style.maxHeight = null;    
+}
+
+let accEls = document.querySelectorAll( '.accordion-faq__item' );
+
+accEls.forEach( acc => {
+    let control = acc.querySelector( '.accordion-faq__control' );
+
+    control.addEventListener( 'click', function() {
+        if ( acc.classList.contains( 'open' ) ) {
+            closeAcc( acc );
+        } else {
+            openAcc( acc );
+        }
+    } );
+} );

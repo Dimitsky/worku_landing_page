@@ -1,13 +1,14 @@
 section(Class="faq")
     div(class="container faq__container")
         div(class="faq__layout")
-            h2(class="heading heading--2 faq__heading") FAQ’s
-            ul(class="reset-list faq__accordion accordion-faq")
-                each item in accList
-                    li(class="accordion-faq__item")
-                        button(class="reset-button accordion-faq__control" type="button" aria-expanded="false")
-                            span(class="accordion-faq__title")= item.title
-                            svg(class="accordion-faq__icon" width="11" height="7" viewBox="0 0 11 7")
-                                use(href="assets/img/defs.svg#acc-icon")
-                        div(class="accordion-faq__content" aria-hidden="true")
-                            p(class="faq__paragraph")= item.content
+            div(class="faq__wrap")
+                h2(class="heading heading--2 faq__heading") FAQ’s
+                ul(class="reset-list faq__accordion accordion-faq")
+                    each item in accList
+                        li(class="accordion-faq__item")
+                            button(class="reset-button accordion-faq__control" type="button" aria-expanded="false")
+                                span(class="paragraph accordion-faq__title")= item.title
+                                svg(class="accordion-faq__icon" width="11" height="7" viewBox="0 0 11 7")
+                                    use(href="assets/img/defs.svg#acc-icon")
+                            div(class="accordion-faq__content" aria-hidden="true")
+                                p(class="paragraph faq__paragraph")= item.content
